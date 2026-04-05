@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { Token } from "../.env";
 import axios from "axios";
 
 export const fetchWeather = createAsyncThunk("weatherApi/fetchWeather", async () => {
-    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=24.470901&lon=39.612236&units=metric&appid=b29762c4666cd73430a651400da215d7`,
+    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=24.470901&lon=39.612236&units=metric&appid=${Token}`,
         //   {
         //     cancelToken: new axios.CancelToken((c) => {
         //       cancelAxios = c
